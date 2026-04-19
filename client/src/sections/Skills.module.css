@@ -1,0 +1,83 @@
+.section {
+  padding: 6rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.cell {
+  background: var(--bg);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s;
+}
+
+.cell:hover {
+  background: var(--accent-dim);
+}
+
+/* Top hover accent line */
+.hoverLine {
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+.cell:hover .hoverLine {
+  width: 100%;
+}
+
+.icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  color: var(--accent);
+}
+
+.cat {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: var(--text);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cell:hover .tag {
+  border-color: var(--accent-border);
+  color: var(--text-subtle);
+}
+
+@media (max-width: 640px) {
+  .section { padding: 4rem 1.25rem; }
+}

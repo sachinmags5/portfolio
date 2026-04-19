@@ -1,0 +1,26 @@
+.footer {
+  padding: 1.8rem 2.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer p {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: .1em;
+}
+
+.center span {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .footer { padding: 1.5rem 1.25rem; flex-direction: column; text-align: center; }
+}

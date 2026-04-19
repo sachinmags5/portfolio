@@ -1,0 +1,158 @@
+.section {
+  padding: 6rem 2.5rem;
+  border-top: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Left column */
+.big {
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -.03em;
+  margin-bottom: 1.2rem;
+}
+.big span { color: var(--accent); }
+
+.sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 380px;
+}
+
+/* Contact link cards */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.clink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+.clink:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-dim);
+}
+
+.clinkIcon {
+  width: 36px; height: 36px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.clinkInfo { flex: 1; }
+
+.clinkLabel {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.clinkValue {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.arrow {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: color 0.2s, transform 0.2s;
+}
+.clink:hover .arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* Right column: form */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 1.2rem;
+}
+.formGroup label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.8rem 1rem;
+  color: var(--text);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: var(--accent-border);
+}
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Feedback messages */
+.errorMsg {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--red);
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(255, 60, 95, 0.3);
+  background: rgba(255, 60, 95, 0.05);
+}
+.successMsg {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-dim);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 640px) {
+  .section { padding: 4rem 1.25rem; }
+}
