@@ -30,5 +30,4 @@ const useScrollReveal = ({ threshold = 0.1, rootMargin = '0px' } = {}) => {
   return { ref, isVisible };
 };
 
-
 export default useScrollReveal;
